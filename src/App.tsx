@@ -1,13 +1,16 @@
 import React from "react";
 import {
-  IonApp,
-  IonContent,
-  IonTitle,
-  IonToolbar,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonInput,
+   IonApp,
+   IonContent,
+   IonTitle,
+   IonToolbar,
+   IonGrid,
+   IonRow,
+   IonCol,
+   IonInput,
+   IonButton,
+   IonItem,
+   IonLabel,
 } from "@ionic/react";
 
 /* Core CSS required for Ionic components to work properly */
@@ -30,31 +33,41 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 
 const App: React.FC = () => {
-  return (
-    <IonApp>
-      <IonToolbar color="primary">
-        <IonTitle>BMI Calculator</IonTitle>
-      </IonToolbar>
-      <IonContent>
-        <IonGrid>
-          <IonRow>
-            <IonCol>
-              <IonInput>Your height</IonInput>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <IonInput>Your height</IonInput>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol className="ion-text-left">Calculate</IonCol>
-            <IonCol className="ion-text-right">Reset</IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonContent>
-    </IonApp>
-  );
+   return (
+      <IonApp>
+         <IonToolbar color="primary">
+            <IonTitle>BMI Calculator</IonTitle>
+         </IonToolbar>
+         <IonContent>
+            <IonGrid>
+               <IonRow>
+                  <IonCol>
+                     <IonItem>
+                        <IonLabel position="floating">Your height</IonLabel>
+                        <IonInput></IonInput>
+                     </IonItem>
+                  </IonCol>
+               </IonRow>
+               <IonRow>
+                  <IonCol>
+                     <IonItem>
+                        <IonLabel position="floating">Your weight</IonLabel>
+                        <IonInput></IonInput>
+                     </IonItem>
+                  </IonCol>
+               </IonRow>
+               <IonRow className='ion-margin'>
+                  <IonCol className="ion-text-left">
+                     <IonButton>Calculate</IonButton>
+                  </IonCol>
+                  <IonCol className="ion-text-right">
+                     <IonButton>Reset</IonButton>
+                  </IonCol>
+               </IonRow>
+            </IonGrid>
+         </IonContent>
+      </IonApp>
+   );
 };
 
 export default App;
