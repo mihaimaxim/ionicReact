@@ -37,7 +37,7 @@ const App: React.FC = () => (
       <IonToolbar color="primary">
          <IonTitle>BMI Calculator</IonTitle>
       </IonToolbar>
-      <IonContent>
+      <IonContent className="ion-padding">
          <IonGrid>
             <IonRow>
                <IonCol>
