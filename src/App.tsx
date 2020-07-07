@@ -12,7 +12,12 @@ import {
    IonItem,
    IonLabel,
    IonHeader,
+   IonCard,
+   IonCardContent,
+   IonIcon,
 } from '@ionic/react';
+
+import { calculatorOutline, refreshOutline } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,6 +37,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import InputsComponent from './components/inputs';
 
 const App: React.FC = () => (
    <IonApp>
@@ -41,30 +47,26 @@ const App: React.FC = () => (
          </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-         <IonGrid>
-            <IonRow>
-               <IonCol>
-                  <IonItem>
-                     <IonLabel position="floating">Your height</IonLabel>
-                     <IonInput></IonInput>
-                  </IonItem>
-               </IonCol>
-            </IonRow>
-            <IonRow>
-               <IonCol>
-                  <IonItem>
-                     <IonLabel position="floating">Your weight</IonLabel>
-                     <IonInput></IonInput>
-                  </IonItem>
-               </IonCol>
-            </IonRow>
+         <IonGrid className="ion-text-center ion-margin">
+            <InputsComponent />
             <IonRow className="ion-margin">
                <IonCol className="ion-text-left">
-                  <IonButton>Calculate</IonButton>
+                  <IonButton>
+                     <IonIcon slot="start" icon={calculatorOutline} />
+                     Calculate
+                  </IonButton>
                </IonCol>
                <IonCol className="ion-text-right">
-                  <IonButton>Reset</IonButton>
+                  <IonButton>
+                     <IonIcon slot="start" icon={refreshOutline} />
+                     Reset
+                  </IonButton>
                </IonCol>
+            </IonRow>
+            <IonRow>
+               <IonCard>
+                  <IonCardContent></IonCardContent>
+               </IonCard>
             </IonRow>
          </IonGrid>
       </IonContent>
