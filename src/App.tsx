@@ -11,6 +11,7 @@ import {
    IonButton,
    IonItem,
    IonLabel,
+   IonHeader,
 } from '@ionic/react';
 
 /* Core CSS required for Ionic components to work properly */
@@ -34,9 +35,11 @@ import './theme/variables.css';
 
 const App: React.FC = () => (
    <IonApp>
-      <IonToolbar color="primary">
-         <IonTitle>BMI Calculator</IonTitle>
-      </IonToolbar>
+      <IonHeader>
+         <IonToolbar color="primary">
+            <IonTitle>BMI Calculator</IonTitle>
+         </IonToolbar>
+      </IonHeader>
       <IonContent className="ion-padding">
          <IonGrid>
             <IonRow>
