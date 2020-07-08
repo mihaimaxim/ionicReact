@@ -36,6 +36,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import BMIButtons from './components/BMIButtons';
+import BMIResult from './components/BMIResult';
 
 const App: React.FC = () => {
    const [calculatedBMI, updateBMI] = useState<number>();
@@ -100,15 +101,16 @@ const App: React.FC = () => {
                      </IonButton>
                   </IonCol>
                </IonRow> */}
-               <BMIButtons onCalculate={calculateBMI} onReset={resetInputs}/>
+               <BMIButtons onCalculate={calculateBMI} onReset={resetInputs} />
                {calculatedBMI && (
-                  <IonRow>
-                     <IonCard>
-                        <IonCardContent>
-                           <h2>{calculatedBMI}</h2>
-                        </IonCardContent>
-                     </IonCard>
-                  </IonRow>
+                  // <IonRow>
+                  //    <IonCard>
+                  //       <IonCardContent>
+                  //          <h2>{calculatedBMI}</h2>
+                  //       </IonCardContent>
+                  //    </IonCard>
+                  // </IonRow>
+                  <BMIResult theResult={calculatedBMI} />
                )}
             </IonGrid>
          </IonContent>
