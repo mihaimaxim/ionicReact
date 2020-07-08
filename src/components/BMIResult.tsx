@@ -1,14 +1,16 @@
 import React from 'react';
-import { IonRow, IonCard, IonCardContent } from '@ionic/react';
+import { IonRow, IonCard, IonCardContent, IonCol } from '@ionic/react';
 
 const BMIResult: React.FC<{ theResult: number }> = (props) => {
    return (
       <IonRow>
-         <IonCard>
-            <IonCardContent>
-               <h2>{props.theResult}</h2>
-            </IonCardContent>
-         </IonCard>
+         <IonCol>
+            <IonCard>
+               <IonCardContent className="ion-text-center">
+                  <h2>{props.theResult.toFixed(1)}</h2>
+               </IonCardContent>
+            </IonCard>
+         </IonCol>
       </IonRow>
    );
 };

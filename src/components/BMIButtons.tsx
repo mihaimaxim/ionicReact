@@ -6,7 +6,7 @@ const BMIButtons: React.FC<{ onCalculate: () => void; onReset: () => void }> = (
    props
 ) => {
    return (
-      <IonRow className="ion-margin">
+      <IonRow>
          <IonCol className="ion-text-left">
             <IonButton onClick={props.onCalculate}>
                <IonIcon slot="start" icon={calculatorOutline} />
