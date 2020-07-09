@@ -14,8 +14,6 @@ import {
    IonAlert,
 } from '@ionic/react';
 
-import BMIControls from './components/BMIButtons';
-
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -36,11 +34,10 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import BMIButtons from './components/BMIButtons';
 import BMIResult from './components/BMIResult';
-import { text } from 'ionicons/icons';
 
 const App: React.FC = () => {
    const [calculatedBMI, updateBMI] = useState<number>();
-   const [error, setError] = useState<string>();
+   const [error, setError] = useState<boolean>();
 
    const heightInputRef = useRef<HTMLIonInputElement>(null);
    const weightInputRef = useRef<HTMLIonInputElement>(null);
@@ -50,7 +47,7 @@ const App: React.FC = () => {
       const weight = weightInputRef.current!.value;
 
       if (!height || !weight || height <= 0 || weight <= 0) {
-         setError('Please enter a valid input value!');
+         setError(true);
          return;
       }
 
@@ -65,14 +62,16 @@ const App: React.FC = () => {
    };
 
    const clearError = () => {
-      setError('');
+      setError(false);
    };
 
    return (
       <React.Fragment>
          <IonAlert
             isOpen={!!error}
-            message={error}
+            onDidDismiss={() => setError(false)}
+            header={'ALERT'}
+            message={'Please enter a valid input number!'}
             buttons={[{ text: 'OK', handler: clearError }]}
          />
          <IonApp>
